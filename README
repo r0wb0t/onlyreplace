@@ -1,0 +1,38 @@
+onlyreplace.js
+==============
+by Rowan Nairn - http://eurekaman.com
+
+A javascript library for declarative AJAX.
+
+Based on ideas from:
+http://lists.whatwg.org/htdig.cgi/whatwg-whatwg.org/2009-October/023661.html
+
+
+Usage
+-----
+
+1. Include the script (<script src="onlyreplace.js"></script>) anywhere inside
+   the <body>
+
+2. Add a data-onlyreplace attribute to any link or form, specifying the ids of 
+   elements to replace
+
+This causes the link or form to behave as if it were an AJAX request that 
+changed only those sections of the page.  The Back and Forward buttons should
+work to change between these states.
+
+See test.html for an example.
+
+
+Advanced Usage
+--------------
+
+After the script has been included you can listen for a "replace" event on the
+document with document.addEventListener("replace", function(r){  }, false)
+
+The listener will be passed a mapping of ids to replacement nodes.  If the
+listener returns false then the normal replacement will be cancelled, allowing
+the listener to do custom replacement animations for example.
+
+See test_custom.html for an example.
+
