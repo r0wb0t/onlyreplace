@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<script> var index = parseInt(location.search.substring(1)) || 0; </script>
+<title>Test Page</title>
+<style>
+
+div {
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin-right: 1em;
+    padding: 1em;
+}
+
+#d { background-color: orange; }
+#s { background-color: pink; }
+
+</style>
+</head>
+<body>
+<script src="onlyreplace.js"></script>
+
+<div id="d"><h3>Dynamic</h3> 
+<script> 
+document.write("<p>index: "+ index);
+document.write("<p>history.length: "+ window.history.length);
+document.write('<p><a href="test.html?'+ (index+1) +'" data-onlyreplace="d">next</a>');
+</script>
+
+</div>
+<div id="s"><h3>Static</h3> <script> document.write(window.history.length + " " + Math.random()) </script></div>
+
+</body>
+</html>
