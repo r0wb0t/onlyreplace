@@ -2,7 +2,7 @@ onlyreplace.js
 ==============
 by Rowan Nairn - http://eurekaman.com
 
-A javascript library for declarative AJAX.
+A javascript library for declarative, progressive enhancement AJAX.
 
 Based on ideas from:
 http://lists.whatwg.org/htdig.cgi/whatwg-whatwg.org/2009-October/023661.html
