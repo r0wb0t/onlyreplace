@@ -48,6 +48,7 @@
                     }
                     copy.innerHTML = element.innerHTML;
                     fixTargets(copy);
+                    stripScripts(copy);
                     replacements[id] = copy;
                 } else {
                     replacements[id] = null;
@@ -124,6 +125,19 @@
                     base.target = fname;
                     toReplace = onlyreplace;
                 }
+            }
+        }
+
+        function stripScripts(element) {
+            var child = element.firstChild;
+            while (child) {
+                var next = child.nextSibling;
+                if (child.tagName == 'SCRIPT') {
+                    element.removeChild(child);
+                } else {
+                    stripScripts(child);
+                }
+                child = next;
             }
         }
     }
