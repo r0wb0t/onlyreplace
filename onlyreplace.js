@@ -44,7 +44,7 @@
                     var copy = document.createElement(element.tagName);
                     var attrs = element.attributes;
                     for (var j=0; j<attrs.length; j++) {
-                        copy.setAttribute(attrs[i].nodeName, attrs[i].nodeValue);
+                        copy.setAttribute(attrs[j].nodeName, attrs[j].nodeValue);
                     }
                     copy.innerHTML = element.innerHTML;
                     fixTargets(copy);
